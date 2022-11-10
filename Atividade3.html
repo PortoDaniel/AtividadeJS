@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperatura</title>
+    <style src="/CSS/index.css"></style>
+</head>
+
+<body>
+    <h1>Javascript</h1>
+    <h2>Acrescentar seu nome na lista</h2>
+    <ul id="Lista">
+        <li>Hudson Daniel</li>
+        <li>Eliene Porto</li>
+    </ul>
+    <br>
+    <label for="Lista">Seu Nome: </label>
+    <input type="text" id="nome">
+    <!--
+    <form>
+        <h3>Qual cor voce quer que seja usada na introdução do seu nome: </h3>
+        <ul>
+            <li><input type="radio" name="cores" value="colors">Vermelho</li>
+            <li><input type="radio" name="cores" value="colors">Azul</li>
+            <li><input type="radio" name="cores" value="colors">Verde</li>
+        </ul>
+
+    </form>
+    -->
+    <br>
+    <br>
+    <button id="submit" onclick="verificaSituação()">Enviar</button>
+    <script>
+        const element = document.getElementById("submit");
+        element.addEventListener("click", verificaSituação);
+
+        function verificaSituação() {
+            let nome = parseFloat(document.getElementById("nome").textnode);
+            const node = document.createElement("li");
+            const textnode = document.createTextNode(nome);
+            node.appendChild(textnode);
+            document.getElementById("Lista").appendChild(node);
+        }
+    </script>
+</body>
+
+</html>
