@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Temperatura</title>
+    <title>Lista</title>
     <style src="/CSS/index.css"></style>
 </head>
 
@@ -19,30 +19,37 @@
     <br>
     <label for="Lista">Seu Nome: </label>
     <input type="text" id="nome">
-    <!--
+
     <form>
         <h3>Qual cor voce quer que seja usada na introdução do seu nome: </h3>
         <ul>
-            <li><input type="radio" name="cores" value="colors">Vermelho</li>
-            <li><input type="radio" name="cores" value="colors">Azul</li>
-            <li><input type="radio" name="cores" value="colors">Verde</li>
+            <li><input type="radio" name="cores" value="red" style="color:red">Vermelho</li>
+            <li><input type="radio" name="cores" value="blue" style="color:blue">Azul</li>
+            <li><input type="radio" name="cores" value="green" style="color:green">Verde</li>
         </ul>
 
     </form>
-    -->
+
     <br>
     <br>
-    <button id="submit" onclick="verificaSituação()">Enviar</button>
+    <button id="submit" onclick="verificaSituação()">Adicionar</button>
+    <br>
+    <br>
+    <p><a href="index.html">Ir para a página de calculo de Nota</a></p>
+    <p><a href="paginaicm.html">Ir para a página de calculo do ICM</p>
     <script>
-        const element = document.getElementById("submit");
         element.addEventListener("click", verificaSituação);
 
         function verificaSituação() {
-            let nome = parseFloat(document.getElementById("nome").textnode);
+            let nome = document.getElementById("nome").value;
             const node = document.createElement("li");
             const textnode = document.createTextNode(nome);
             node.appendChild(textnode);
             document.getElementById("Lista").appendChild(node);
+
+            let cor = "";
+            cor = document.querySelector('input[name="cores"]:checked').value
+            node.style.color = cor
         }
     </script>
 </body>
